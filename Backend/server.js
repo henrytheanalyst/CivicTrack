@@ -5,12 +5,15 @@ import dotenv from 'dotenv';
 import pool from "./db.js";
 dotenv.config();
 
+
 const app=express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(morgan("dev"));
 app.use(cors());
+
+import AuthRoutes from './Routes/authRoutes.js';
 
 app.get('/test',async(req,res)=>{
     try {
@@ -27,7 +30,9 @@ app.get('/test',async(req,res)=>{
         
     }
     
-})
+});
+
+app.use('/civictrack',AuthRoutes);
 const port=Number(process.env.PORT || 3000);
 
 app.listen(port,()=>{
