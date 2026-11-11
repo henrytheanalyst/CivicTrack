@@ -1,0 +1,55 @@
+#
+node_modules/
+
+
+# Environment variables & secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# React & Frontend Build Outputs
+build/
+dist/
+.next/
+out/
+.vite/
+.cache/
+.eslintcache
+.tsbuildinfo
+
+# Backend, Databases & Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.sqlite
+*.sqlite3
+*.db
+uploads/
+tmp/
+temp/
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# VS Code & Editor Files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
