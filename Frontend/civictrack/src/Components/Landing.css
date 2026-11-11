@@ -1,0 +1,84 @@
+.landing{
+    font: inherit;
+    min-height: 100vh;
+    background-image:url("https://previews.123rf.com/images/scusi/scusi1803/scusi180300011/97061635-repair-in-road-construction-illustration.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form{
+    max-width: 450px;
+    width: 98%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+}
+.form h1{
+    margin-bottom: 10px;
+}
+.form h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.form .subtitle{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+.box label{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.box input{
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 2px solid #088F8F;
+}
+.box input:focus{
+    outline: none;
+    border: 2px solid #0096FF;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.box2 .left{
+    display: flex;
+    gap: 6px;
+}
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding:10px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 15px;
+    background: #097969;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.submit:hover{
+    background: #2774AE;
+}
+.submit i{
+    font-size: 22px;
+}
+.link{
+    text-align: center;
+}
