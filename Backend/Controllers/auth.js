@@ -1,5 +1,6 @@
 import pool from "../db.js";
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export const register=async (req,res) => {
     try {
@@ -43,10 +44,6 @@ export const register=async (req,res) => {
                 message:"Please provide a valid email address"
             })
           }
-console.log("Password received",JSON.stringify(password));
-console.log("Password length",password.length);
-console.log("Validation result",password.length<8);
-
 
 
           //lets check passlength
@@ -74,6 +71,68 @@ console.log("Validation result",password.length<8);
         }
         res.status(500).json({
             message:"Problem encountered in registration",
+        })
+    }
+}
+
+
+export const login=async (req,res) => {
+    try {
+
+        if(
+            !req.body ||
+            typeof req.body !== "object" ||
+            Array.isArray(req.body)
+        ){
+            return res.status(400).json({
+                message:"Invalid request body"
+            });
+        }
+        const {email,password}=req.body;
+        if(
+            typeof email !=="string"||
+            typeof password !=="string"
+        ){
+            return res.status(400).json({
+                message:"Kindly check and ensure you have the correct values"
+            })
+        }
+        const normalizedEmail=email.trim().toLowerCase();
+        if(!normalizedEmail || !password){
+            return res.status(400).json({
+                message:"All fields are required for login"
+            })
+        }
+      
+        const record=await pool.query(`SELECT id,full_name,email,password FROM users WHERE email=$1`,[normalizedEmail]);
+        if(record.rows.length === 0){
+            return res.status(401).json({
+                message:"Incorrect email or password"//i dont want to risk and say account does not exist that will help hackers
+            })
+        }
+        const user=record.rows[0]
+        const passMatch=await bcrypt.compare(password,user.password);
+        if(!passMatch){
+             return res.status(401).json({
+                message:"Incorrect email or password"//i dont want to risk and say account does not exist that will help hackers
+            })
+        }
+        const token=jwt.sign(
+            {
+                id:user.id,
+                email:user.email
+            },
+            process.env.JWT_SECRET,
+            {expiresIn:"1h"}
+        );
+        return res.status(200).json({
+            message:"Login successful",
+            token:token
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message:"Problem encountered in login",
         })
     }
 }
