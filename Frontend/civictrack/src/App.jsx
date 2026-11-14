@@ -1,8 +1,8 @@
-import Landing from "./Components/Landing";
+import Dashboard from './Components/Dashboard';
 import './App.css'
 function App(){
   return(
-    <Landing/>
+    <Dashboard/>
   );
 }
 export default App;
