@@ -29,12 +29,12 @@ function ReportIssue(){
                 <label htmlFor="location">Pinpoint the location</label>
                 <h3>Add an address and coordinates for the city crew</h3>
                 <label htmlFor="streetaddress">Street Address</label>
-                <input type="text" placeholder="Street address" />
+                <input type="text" placeholder="Street address" id='streetaddress' />
                 <div className="form-box">
                     <label htmlFor="latitude">Latitude</label>
-                    <input type="text" placeholder="Latitude" />
+                    <input type="text" placeholder="Latitude" id='latitide' />
                     <label htmlFor="longitude">Longitude</label>
-                     <input type="text" placeholder="Longitude" />
+                     <input type="text" placeholder="Longitude" id='longitude' />
                 </div>
                 <button>
                     <i className="ri-focus-3-line"></i>
@@ -43,7 +43,7 @@ function ReportIssue(){
             </div>
             <div className="box">
                 <label htmlFor="description">Describe the issue</label>
-                <textarea  cols="30" rows="10" placeholder="Example:Large pothole in the left lane,approximately 60cm wide.it becomes difficult to see after dark"></textarea>
+                <textarea  cols="30" rows="10" placeholder="Example:Large pothole in the left lane,approximately 60cm wide.it becomes difficult to see after dark" id='description'></textarea>
                 <h3>Photo(optional)</h3>
                 <input type="file" accept='image/*'/>
             </div>
