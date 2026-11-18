@@ -1,0 +1,120 @@
+.overview-page{
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+.overview-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.info h1{
+    font-size: 14px;
+    color: #64736f;
+    margin-bottom: 10px;
+}
+.info h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #172421;
+    letter-spacing: 0;
+}
+.info p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #64736f;
+    margin-top: 10px;
+}
+.overview-info button{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #087f70;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.overview-info button:hover{
+    background: #06665b;
+}
+.overview-info button i{
+    font-size: 29px;
+}
+.overview-card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.card{
+    display: flex;
+    border: 1px solid #e2e8e5;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.card i{
+    font-size: 32px;
+    color: #087f70;
+}
+.card-info h3{
+    font-size: 14px;
+    color: #64736f;
+    font-weight: 500;
+}
+.card-info h2{
+    font-size: 28px;
+    color: #172421;
+    font-weight: 700;
+    margin: 8px 0;
+}
+.card-report{
+    background: #ffffff;
+    border: 1px solid #e2e8e5;
+    border-radius: 12px;
+    padding: 20px;
+}
+.card-report table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+.card-report th{
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64736f;
+    border-bottom: 1px solid #e2e8e5;
+}
+.card-report td{
+    padding: 18px 16px;
+    font-size: 14px;
+    color: #172421;
+    border-bottom: 1px solid #e2e8e5;
+}
+.card-report tbody tr{
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+.card-report tbody tr:hover{
+    background-color: #f4f7f6;
+}

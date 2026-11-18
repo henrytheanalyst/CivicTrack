@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import './Sidebar.css'
 function Sidebar(){
+    const [selectedItem,setSelectedItem]=useState("Overview");
     return(
         <aside className="sidebar">
             <div className="iconbar">
-                <i class="ri-megaphone-line"></i>
+                <i className="ri-megaphone-line"></i>
                 <div className="logo-name">
                     <h2>CivicTrack</h2>
                     <p className="logo-subtitle">
@@ -48,7 +50,7 @@ function Sidebar(){
                   <h2> Alex Morgan</h2>
                  <p>Citizen reporter</p>
              </div>
-             <i class="ri-logout-box-r-line"></i>
+             <i className="ri-logout-box-r-line"></i>
             </div>
         </aside>
     );
