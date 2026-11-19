@@ -135,6 +135,12 @@
     font-size: 14px;
 color: #71817b;
 }
+.form-grid button.selected-category{
+    border: 1px solid #087f70;
+    background-color: #e8f5f1;
+    color: #087f70;
+    box-shadow: 0 0 0 2px rgba(8, 127, 112, 0.08);
+}
 @media(max-width:768px){
     .report-section{
         padding: 20px;

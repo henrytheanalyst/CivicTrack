@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './ReportIssue.css';
 function ReportIssue(){
+    const [selectedCategory,setSelectedCategory]=useState("")
     return(
         <section className="report-section">
             <div className="report-header">
@@ -12,19 +14,19 @@ function ReportIssue(){
             <div className="box">
                 <label htmlFor="category">Choose a category</label>
                 <div className="form-grid">
-                    <button type='button'>
+                    <button type='button' onClick={()=>setSelectedCategory("Pothole")} className={selectedCategory === "Pothole" ?"selected-category":""}>
                     <i className="ri-bubble-chart-line"></i>
                         Pothole
                     </button>
-                    <button type='button'>
+                    <button type='button' onClick={()=>setSelectedCategory("Streetlight")} className={selectedCategory === "Streetlight" ?"selected-category":""}>
                          <i className="ri-lightbulb-line"></i>
                         Streetlight
                     </button>
-                    <button className='button'>
+                    <button type='button' onClick={()=>setSelectedCategory("Drainage")} className={selectedCategory === "Drainage" ?"selected-category":""}>
                          <i className="ri-contrast-drop-line"></i>
                         Drainage
                     </button>
-                    <button className='button'>
+                    <button type='button' onClick={()=>setSelectedCategory("Garbage")} className={selectedCategory === "Garbage" ?"selected-category":""}>
                          <i className="ri-contrast-drop-line"></i>
                         Garbage
                     </button>
