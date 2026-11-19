@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import './ReportIssue.css';
 function ReportIssue(){
-    const [selectedCategory,setSelectedCategory]=useState("")
+    const [selectedCategory,setSelectedCategory]=useState("");
+    const [streetAddress,setStreetAddress]=useState("");
+    const [latitude,setLatitude]=useState("");
+    const [longitude,setLongitude]=useState("")
     return(
         <section className="report-section">
             <div className="report-header">
@@ -37,15 +40,33 @@ function ReportIssue(){
                 <label htmlFor="location">Pinpoint the location</label>
                 <h3>Add an address and coordinates for the city crew</h3>
                 <label htmlFor="streetaddress">Street Address</label>
-                <input type="text" placeholder="Street address" id='streetaddress' />
+                <input 
+                    type="text" 
+                    placeholder="Street address" 
+                    id='streetaddress' 
+                    value={streetAddress}
+                    onChange={(e)=>setStreetAddress(e.target.value)}
+                />
                 <div className="form-box">
                     <div>
                         <label htmlFor="latitude">Latitude</label>
-                        <input type="text" placeholder="Latitude" id='latitide' />
+                        <input 
+                            type="text" 
+                            placeholder="Latitude" 
+                            id='latitide' 
+                            value={latitude}
+                            onChange={(e)=>setLatitude(e.target.value)}
+                        />
                     </div>
                     <div>
                         <label htmlFor="longitude">Longitude</label>
-                        <input type="text" placeholder="Longitude" id='longitude' />  
+                        <input 
+                            type="text" 
+                            placeholder="Longitude" 
+                            id='longitude' 
+                            value={longitude}
+                            onChange={(e)=>setLongitude(e.target.value)}
+                        />  
                     </div>
                    
                 </div>
