@@ -4,7 +4,9 @@ function ReportIssue(){
     const [selectedCategory,setSelectedCategory]=useState("");
     const [streetAddress,setStreetAddress]=useState("");
     const [latitude,setLatitude]=useState("");
-    const [longitude,setLongitude]=useState("")
+    const [longitude,setLongitude]=useState("");
+    const [description,setDescription]=useState("");
+    const [photo,setPhoto]=useState(null);
     return(
         <section className="report-section">
             <div className="report-header">
@@ -70,16 +72,26 @@ function ReportIssue(){
                     </div>
                    
                 </div>
-                <button>
+                <button type='button'>
                     <i className="ri-focus-3-line"></i>
                     Use my current location
                 </button>
             </div>
             <div className="box">
                 <label htmlFor="description">Describe the issue</label>
-                <textarea  cols="30" rows="10" placeholder="Example:Large pothole in the left lane,approximately 60cm wide.it becomes difficult to see after dark" id='description'></textarea>
+                <textarea  
+                    cols="30"
+                     rows="10"
+                      placeholder="Example:Large pothole in the left lane,approximately 60cm wide.it becomes difficult to see after dark" id='description'
+                      value={description}
+                      onChange={(e)=>setDescription(e.target.value)}></textarea>
                 <h3>Photo(optional)</h3>
-                <input type="file" accept='image/*' id='photo'/>
+                <input 
+                    type="file" 
+                    accept='image/*'
+                     id='photo'
+                     onChange={(e)=>setPhoto(e.target.files[0])}/>
+                {photo && <p>photo.name</p>}
             </div>
             <button type='submit'>Submit Report</button>
         </form>
